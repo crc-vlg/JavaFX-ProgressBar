@@ -6,16 +6,20 @@ public class ProgressWorker extends Task<Void> {
 
     @Override
     public Void call() {
+        // сообщим Label о начае работы
         updateMessage("Начало");
+        // сообщим ProgressBar об изменении прогресса
         updateProgress(0, 100);
         for (int i = 0; i <= 100; i++) {
-            if (this.isCancelled())
+            // в случае отмены потока
+            if (isCancelled())
                 updateMessage("Отменено");
 
             updateMessage(Integer.toString(i));
 
             try {
                 Thread.sleep(200);
+                // передаем изменения прогреса ProgressBar
                 updateProgress(i, 100);
             } catch (Exception e) {
                 if (isCancelled()) {

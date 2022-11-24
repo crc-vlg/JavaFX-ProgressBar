@@ -7,6 +7,8 @@ import javafx.scene.control.ProgressBar;
 
 public class MainController {
 
+    // в классе описывается полезная нагрузка
+    // и изменения Label и ProgressBar
     private ProgressWorker progressWorker;
     @FXML
     private Label label1;
@@ -21,8 +23,10 @@ public class MainController {
         if (progressWorker != null && progressWorker.isRunning())
             progressWorker.cancel();
 
+        // создаем поток
         progressWorker = new ProgressWorker();
         Thread thread = new Thread(progressWorker);
+        // низкий приоритет
         thread.setDaemon(true);
         thread.start();
 
@@ -30,6 +34,7 @@ public class MainController {
         label1.textProperty().unbind();
         button1.disableProperty().unbind();
 
+        // связываем
         progressBar1.progressProperty().bind(progressWorker.progressProperty());
         label1.textProperty().bind(progressWorker.messageProperty());
         button1.disableProperty().bind(progressWorker.runningProperty());
