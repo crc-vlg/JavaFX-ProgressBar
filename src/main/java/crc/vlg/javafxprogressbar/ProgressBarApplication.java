@@ -12,8 +12,9 @@ public class ProgressBarApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ProgressBarApplication.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("ProgressBarExample");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

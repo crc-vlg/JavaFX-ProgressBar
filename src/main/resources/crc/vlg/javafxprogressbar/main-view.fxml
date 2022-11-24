@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="crc.vlg.javafxprogressbar.MainController">
+<VBox alignment="CENTER" prefHeight="265.0" prefWidth="379.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crc.vlg.javafxprogressbar.MainController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="label1"/>
-    <Button text="Button" onAction="#onButtonClick"/>
+    <Label fx:id="label1" text="ProgressBarExample" />
+    <Button fx:id="button1" onAction="#onButtonClick" text="Button" />
+   <ProgressBar fx:id="progressBar1" prefHeight="20.0" prefWidth="330.0" progress="0.0" />
 </VBox>
